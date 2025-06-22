@@ -6,11 +6,11 @@ an arduino game that’s more expensive than fun
 graph TD
     Start([Inicio])
     Gen[Generar secuencia aleatoria]
-    Show[Mostrar secuencia (letras o números)]
+    Show[Mostrar secuencia]
     Input[Leer respuesta del jugador]
     Correct{¿Respuesta correcta?}
-    Fail[Mostrar "¡Fallaste!"\nNivel alcanzado\nFin del juego]
-    Win[Mostrar "¡Bien!"\n+1 Nivel]
+    Fail[Mostrar \'Fallaste. Nivel alcanzado. Fin del juego\']
+    Win[Mostrar \'¡Bien! +1 Nivel\']
     Max{¿Nivel > 20?}
     Reset[Nivel = 1]
     
