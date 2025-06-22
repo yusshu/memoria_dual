@@ -5,23 +5,20 @@ an arduino game that’s more expensive than fun
 ```mermaid
 graph TD
     Start([Inicio])
-    Gen[Generar secuencia aleatoria]
+    Gen[Generar secuencia]
     Show[Mostrar secuencia]
-    Input[Leer respuesta del jugador]
+    Input[Leer respuesta]
     Correct{¿Respuesta correcta?}
-    Fail[Mostrar \'Fallaste. Nivel alcanzado. Fin del juego\']
-    Win[Mostrar \'¡Bien! +1 Nivel\']
+    Fail[Fallaste - Esperar - Reiniciar]
+    Win[¡Bien! +1 Nivel]
     Max{¿Nivel > 20?}
-    Reset[Nivel = 1]
-    
-    Start --> Gen
-    Gen --> Show
-    Show --> Input
-    Input --> Correct
+    Reset[Reiniciar nivel]
 
-    Correct -- No --> Fail
-    Correct -- Sí --> Win
-    Win --> Max
+    Start --> Gen
+    Gen --> Show --> Input --> Correct
+
+    Correct -- No --> Fail --> Gen
+    Correct -- Sí --> Win --> Max
     Max -- Sí --> Reset --> Gen
     Max -- No --> Gen
 ```
